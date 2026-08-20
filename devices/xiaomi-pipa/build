@@ -19,6 +19,8 @@ dnf -y install \
 # Services
 
 systemctl enable qbootctl.service bootmac-bluetooth
+systemctl enable iio-sensor-proxy-fix-boot.service iio-sensor-proxy-fix-suspend.service
+systemctl enable nix.mount
 
 # Kernel
 
