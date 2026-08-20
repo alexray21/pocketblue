@@ -1,0 +1,10 @@
+[Unit]
+Description=Restart iio-sensor-proxy after suspend
+After=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
+
+[Service]
+Type=oneshot
+ExecStart=sh -c "/usr/bin/systemctl restart hexagonrpcd-sdsp.service iio-sensor-proxy.service; /usr/bin/sleep 5; /usr/bin/systemctl restart hexagonrpcd-sdsp.service iio-sensor-proxy.service; /usr/bin/sleep 10; /usr/bin/systemctl restart hexagonrpcd-sdsp.service iio-sensor-proxy.service"
+
+[Install]
+WantedBy=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target

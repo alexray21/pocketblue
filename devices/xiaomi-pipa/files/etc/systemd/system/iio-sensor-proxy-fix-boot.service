@@ -1,0 +1,13 @@
+[Unit]
+Description=Restart iio-sensor-proxy service
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=sh -c "/usr/bin/sleep 10; /usr/bin/systemctl restart hexagonrpcd-sdsp.service iio-sensor-proxy.service; /usr/bin/sleep 5; /usr/bin/systemctl restart hexagonrpcd-sdsp.service iio-sensor-proxy.service; /usr/bin/sleep 10; /usr/bin/systemctl restart hexagonrpcd-sdsp.service iio-sensor-proxy.service"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
+
