@@ -16,8 +16,11 @@ dnf -y install \
     pipa-sound-conf \
     bootmac \
     plymouth-plugin-script \
-    https://github.com/alexray21/pocketblue/releases/download/21.08.26/basic-spinner-plymouth-theme-1.0-1.fc44.noarch.rpm 
+    https://github.com/alexray21/pocketblue/releases/download/21.08.26/basic-spinner-plymouth-theme-1.0-1.fc44.noarch.rpm \
+    acpid evtest glibc-langpack-ru hexagonrpc pipa-sensors iio-sensor-proxy libssc waydroid
 
+dnf -y remove \
+    qemu-user-static-x86
 # Services
 
 systemctl enable qbootctl.service bootmac-bluetooth
