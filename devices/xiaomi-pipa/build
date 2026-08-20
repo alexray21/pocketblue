@@ -26,6 +26,7 @@ systemctl enable nix.mount
 
 # Kernel
 
+plymouth-set-default-theme basic-spinner
 mkdir -p /boot/dtb
 dnf -y remove \
     kernel \
