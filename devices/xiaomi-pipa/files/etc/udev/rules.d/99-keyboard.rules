@@ -1,0 +1,1 @@
+KERNEL=="event*", SUBSYSTEM=="input", ATTRS{name}=="Nanosic 803 keyboard", GROUP="input", SYMLINK+="nanosic-keyboard", MODE="0660"
