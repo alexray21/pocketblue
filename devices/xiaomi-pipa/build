@@ -16,7 +16,7 @@ dnf -y install \
     pipa-sound-conf \
     bootmac \
     plymouth-plugin-script \
-    https://github.com/alexray21/pocketblue/releases/download/21.08.26/basic-spinner-plymouth-theme-1.0-1.fc44.noarch.rpm \
+    https://github.com/alexray21/pocketblue/releases/download/1/basic-spinner-plymouth-theme-1.0-1.fc44.noarch.rpm \
     acpid evtest glibc-langpack-ru hexagonrpc pipa-sensors iio-sensor-proxy libssc waydroid
 
 dnf -y remove \
@@ -41,7 +41,6 @@ dnf -y remove \
     kernel-modules-core \
     kernel-headers
 dnf -y install \
-    https://github.com/alexray21/pocketblue/releases/download/1/basic-spinner-plymouth-theme-1.0-1.fc44.noarch.rpm \
     https://github.com/alexray21/pocketblue/releases/download/1/kernel-core.rpm \
     https://github.com/alexray21/pocketblue/releases/download/1/kernel-devel-matched.rpm \
     https://github.com/alexray21/pocketblue/releases/download/1/kernel-devel.rpm \
