@@ -41,11 +41,12 @@ dnf -y remove \
     kernel-modules-core \
     kernel-headers
 dnf -y install \
-    https://github.com/alexray21/pocketblue/releases/download/1/kernel.rpm \
+    https://github.com/alexray21/pocketblue/releases/download/1/basic-spinner-plymouth-theme-1.0-1.fc44.noarch.rpm \
     https://github.com/alexray21/pocketblue/releases/download/1/kernel-core.rpm \
-    https://github.com/alexray21/pocketblue/releases/download/1/kernel-modules.rpm \
-    https://github.com/alexray21/pocketblue/releases/download/1/kernel-headers-pipa.rpm \
-    https://github.com/alexray21/pocketblue/releases/download/1/kernel-devel.rpm \
     https://github.com/alexray21/pocketblue/releases/download/1/kernel-devel-matched.rpm \
-    https://github.com/alexray21/pocketblue/releases/download/21.08.26/missingsymlink-0.1-0.1.noarch.rpm
+    https://github.com/alexray21/pocketblue/releases/download/1/kernel-devel.rpm \
+    https://github.com/alexray21/pocketblue/releases/download/1/kernel-headers-pipa.rpm \
+    https://github.com/alexray21/pocketblue/releases/download/1/kernel-modules.rpm \
+    https://github.com/alexray21/pocketblue/releases/download/1/kernel.rpm \
+    https://github.com/alexray21/pocketblue/releases/download/1/missingsymlink-0.1-0.1.noarch.rpm
 rm -r /boot/dtb
