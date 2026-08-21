@@ -1,0 +1,13 @@
+[Unit]
+Description=Setting the system time according to an offset file
+DefaultDependencies=no
+Before=systemd-fsck-root.service systemd-fsck@.service
+
+[Service]
+Type=oneshot
+TimeoutSec=0
+ExecStart=/usr/local/bin/swclock-offset-boot
+
+[Install]
+WantedBy=sysinit.target
+
