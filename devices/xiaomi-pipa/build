@@ -20,12 +20,15 @@ dnf -y install \
     acpid evtest glibc-langpack-ru hexagonrpc pipa-sensors iio-sensor-proxy libssc waydroid
 
 dnf -y remove \
-    qemu-user-static-x86
+    qemu-user-static-x86 \
+    qemu-guest-agent
+
 # Services
 
 systemctl enable qbootctl.service bootmac-bluetooth
 systemctl enable iio-sensor-proxy-fix-boot.service iio-sensor-proxy-fix-suspend.service
 systemctl enable nix.mount
+systemctl enable swclock-offset-boot.service swclock-offset-shutdown.service
 
 # Kernel
 
