@@ -6,7 +6,7 @@ Before=shutdown.target reboot.target halt.target
 [Service]
 Type=oneshot
 TimeoutSec=0
-ExecStart=/usr/local/bin/swclock-offset-shutdown
+ExecStart=/usr/bin/swclock-offset-shutdown
 
 [Install]
 WantedBy=shutdown.target reboot.target halt.target
