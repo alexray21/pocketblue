@@ -2,8 +2,6 @@
 
 set -uexo pipefail
 
-dnf -y install default-flatpaks
-
 dnf -y remove \
     firefox \
     firefox-langpacks
