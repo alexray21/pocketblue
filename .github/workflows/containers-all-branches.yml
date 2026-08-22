@@ -6,7 +6,6 @@ on:
 
 jobs:
   main:
-    if: ${{ github.event_name != 'schedule' || !github.event.repository.fork }}
     secrets: inherit
     permissions:
       packages: write
