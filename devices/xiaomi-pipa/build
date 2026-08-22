@@ -29,7 +29,6 @@ dnf -y swap ffmpeg-free ffmpeg --allowerasing
 
 systemctl enable qbootctl.service bootmac-bluetooth
 systemctl enable iio-sensor-proxy-fix-boot.service iio-sensor-proxy-fix-suspend.service
-systemctl enable nix.mount
 systemctl enable swclock-offset-boot.service swclock-offset-shutdown.service
 
 # Kernel
