@@ -24,6 +24,7 @@ dnf -y remove \
     qemu-guest-agent \
     totem-video-thumbnailer
 dnf -y swap ffmpeg-free ffmpeg --allowerasing
+dconf update
 
 # Services
 
