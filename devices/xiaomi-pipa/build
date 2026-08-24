@@ -31,6 +31,7 @@ dconf update
 # Services
 
 systemctl enable qbootctl.service bootmac-bluetooth
+systemctl enable hexagonrpcd-sdsp.service iio-sensor-proxy.service
 systemctl enable iio-sensor-proxy-fix-boot.service iio-sensor-proxy-fix-suspend.service
 systemctl enable swclock-offset-boot.service swclock-offset-shutdown.service
 
