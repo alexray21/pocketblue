@@ -17,9 +17,10 @@ dnf -y install \
     bootmac \
     plymouth-plugin-script \
     https://github.com/alexray21/pocketblue/releases/download/1/basic-spinner-plymouth-theme-1.0-1.fc44.noarch.rpm \
+    https://github.com/alexray21/pocketblue/releases/download/1/libssc-0.4.1-1.aarch64.rpm \
     https://github.com/alexray21/pocketblue/releases/download/1/iio-sensor-proxy-3.9-1.aarch64.rpm \
     https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-    acpid evtest glibc-langpack-ru hexagonrpc pipa-sensors iio-sensor-proxy libssc waydroid ffmpegthumbnailer mesa-libOpenCL
+    acpid evtest glibc-langpack-ru hexagonrpc pipa-sensors waydroid ffmpegthumbnailer mesa-libOpenCL
 dnf -y remove \
     qemu-user-static-x86 \
     qemu-guest-agent \
