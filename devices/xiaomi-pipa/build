@@ -22,7 +22,8 @@ dnf -y install \
 dnf -y remove \
     qemu-user-static-x86 \
     qemu-guest-agent \
-    totem-video-thumbnailer
+    totem-video-thumbnailer \
+    ibus-typing-booster
 dnf -y swap ffmpeg-free ffmpeg --allowerasing
 dconf update
 
