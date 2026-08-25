@@ -1,2 +1,3 @@
 SUBSYSTEM=="block", KERNEL=="sda*", ENV{UDISKS_IGNORE}="1"
 SUBSYSTEM=="block", KERNEL=="sde*", ENV{UDISKS_IGNORE}="1"
+SUBSYSTEM=="block", KERNEL=="sdf*", ENV{UDISKS_IGNORE}="1"
