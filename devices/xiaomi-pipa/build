@@ -9,7 +9,7 @@ cp -arfT files/usr /usr
 
 # Packages
 
-dnf -y install fex-emu fex-emu-thunks fex-emu-filesystem fex-emu-utils --setopt=install_weak_deps=False
+dnf -y install fex-emu fex-emu-thunks fex-emu-filesystem fex-emu-utils erofs-fuse --setopt=install_weak_deps=False
 dnf -y install \
     xiaomi-pipa-firmware \
     qbootctl \
