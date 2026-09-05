@@ -1,0 +1,10 @@
+[Match]
+Name=usb0
+
+[Link]
+ActivationPolicy=always-up
+
+[Network]
+DHCP=no
+Address=192.168.42.1/24
+ConfigureWithoutCarrier=true
