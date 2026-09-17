@@ -26,8 +26,9 @@ on:
         required: true
         options:
           - '44'
+          - '45'
           - 'rawhide'
-        default: '44'
+        default: '45'
       device:
         type: choice
         description: 'device'
