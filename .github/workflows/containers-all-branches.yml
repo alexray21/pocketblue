@@ -2,7 +2,7 @@ name: containers (all branches)
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 1 * * 1'
 
 jobs:
   main:
@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        fedora_branch: ['44', '45', 'rawhide']
+        fedora_branch: ['45', 'rawhide']
     uses: ./.github/workflows/containers.yml
     with:
       fedora_branch: ${{ matrix.fedora_branch }}
