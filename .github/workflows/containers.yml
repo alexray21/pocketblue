@@ -41,7 +41,7 @@ on:
           - 'xiaomi-nabu-rodriguezst'
           - 'xiaomi-pipa'
           - 'xunlong-orangepi3-lts'
-        default: 'all'
+        default: 'xiaomi-pipa'
       desktop:
         type: choice
         description: 'desktop'
