@@ -21,7 +21,7 @@ on:
         type: string
         description: image tag
         required: true
-        default: '44'
+        default: '45'
       desktop:
         type: choice
         description: desktop
@@ -89,12 +89,11 @@ jobs:
         run: |
           cat 'devices/${{ inputs.device }}/build-aux/device.conf' >> $GITHUB_OUTPUT
 
-      - name: Install erofs-utils
-        if: ${{ steps.conf.outputs.build_erofs == 'true' }}
+      - name: Install dependencies
         shell: bash
         run: |
           sudo apt-get update
-          sudo apt-get install -y erofs-utils
+          sudo apt-get install -y erofs-utils android-sdk-libsparse-utils
 
       - name: Prepare environment
         env:
@@ -117,6 +116,7 @@ jobs:
           PB_DEVICE=${{ inputs.device }}
           PB_DESKTOP=${{ matrix.desktop }}
           PB_REGISTRY=${IMAGE_REGISTRY,,}
+          PB_EXTRAS=${{ steps.conf.outputs.extras || 'true' }}
           EOF
 
           cat .env >> $GITHUB_ENV
@@ -127,7 +127,17 @@ jobs:
 
       - name: Pull the container image
         run: |
-          sudo podman pull $PB_FULL_IMAGE
+          # retry 3 times
+          n=0
+          until [ "$n" -ge 3 ]; do
+            sudo podman pull $PB_FULL_IMAGE && break
+            n=$((n+1))
+            sleep 10
+          done
+
+          if [ "$n" -ge 3 ]; then
+            exit 1
+          fi
 
       - name: Build disk image
         run: |
@@ -170,3 +180,4 @@ jobs:
         with:
           release_id: ${{ inputs.release_id }}
           file: pocketblue-${{ steps.conf.outputs.device_base || env.PB_DEVICE }}-${{ env.PB_DESKTOP }}-${{ env.PB_TAG }}.7z
+          draft: true

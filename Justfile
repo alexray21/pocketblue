@@ -4,7 +4,7 @@ silverblue := env("PB_SILVERBLUE", "quay.io/fedora/fedora-silverblue")
 kinoite := env("PB_KINOITE", "quay.io/fedora/fedora-kinoite")
 base_atomic := env("PB_BASE_ATOMIC", "quay.io/fedora-ostree-desktops/base-atomic")
 
-branch := env("PB_BRANCH", "44")
+branch := env("PB_BRANCH", "45")
 tag := env("PB_TAG", branch)
 
 device := env("PB_DEVICE", "qualcomm-sdm845")
@@ -36,6 +36,7 @@ rechunk_suffix := env("PB_RECHUNK_SUFFIX", "-build")
 arch := env("PB_ARCH", "arm64")
 
 # disk image vars
+extras := env("PB_EXTRAS", "true")
 compression_7z := env("PB_COMPRESSION_7Z", "") # 7z compression args, empty means default compression
 
 import "tools/containers.just"
