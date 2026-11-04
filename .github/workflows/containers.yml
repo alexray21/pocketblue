@@ -94,11 +94,7 @@ jobs:
           vars_registry: ${{ vars.REGISTRY }}
           device: ${{ inputs.device || '' }}
           device_list: |
-            qualcomm-sdm845
-            xiaomi-nabu
-            xiaomi-nabu-rodriguezst
             xiaomi-pipa
-            xunlong-orangepi3-lts
 
   desktops:
     runs-on: ubuntu-26.04-arm
