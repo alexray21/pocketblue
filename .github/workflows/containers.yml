@@ -34,18 +34,27 @@ on:
         description: 'device'
         required: true
         options:
+          - 'all'
+          - 'nothing-spacewar'
+          - 'qualcomm-sdm845'
+          - 'xiaomi-nabu'
+          - 'xiaomi-nabu-rodriguezst'
           - 'xiaomi-pipa'
-        default: 'xiaomi-pipa'
+          - 'xunlong-orangepi3-lts'
+        default: 'all'
       desktop:
         type: choice
         description: 'desktop'
         required: true
         options:
           - 'all'
+          - 'tty'
           - 'gnome-desktop'
+          - 'gnome-mobile'
           - 'plasma-desktop'
+          - 'plasma-mobile'
           - 'phosh'
-        default: 'gnome-desktop'
+        default: 'all'
       rechunker:
         type: choice
         description: 'rechunker'
@@ -85,7 +94,12 @@ jobs:
           vars_registry: ${{ vars.REGISTRY }}
           device: ${{ inputs.device || '' }}
           device_list: |
+            qualcomm-sdm845
+            xiaomi-nabu
+            xiaomi-nabu-rodriguezst
             xiaomi-pipa
+            xunlong-orangepi3-lts
+
   desktops:
     runs-on: ubuntu-26.04-arm
     outputs:
@@ -96,8 +110,11 @@ jobs:
         with:
           desktop: ${{ inputs.desktop || '' }}
           desktop_list: |
+            tty
             gnome-desktop
+            gnome-mobile
             plasma-desktop
+            plasma-mobile
             phosh
 
   build:
